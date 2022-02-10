@@ -95,7 +95,7 @@ function Card() {
                     transition={{ duration: 0.8}}
                     initial={{opacity:0}}
                     animate={{opacity:1}}
-                    className=' flex justify-center w-full mt-[30px] drop-shadow-sm '>
+                    className=' flex justify-center w-full mt-[30px] drop-shadow-sm px-1 '>
                         
                         <input ref={urlRef} type="text" placeholder='ex: https://facebook.com' className=' w-full bg-gray-200 border-[1px] h-[34px] mr-[10px]  outline-secondary px-2 rounded-md border-green-500 ' />
                         <div className=' flex items-center cursor-pointer  uppercase bg-secondary px-2 rounded-md text-white transition duration-350 ease-in-out hover:bg-green-600 ' >
