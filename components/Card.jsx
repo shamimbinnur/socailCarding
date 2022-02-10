@@ -67,7 +67,7 @@ function Card() {
     <div className={` ${ dark ? " dark " : "" } `}>
         <div className=' font-Inter dark:bg-gray-900 min-h-screen ' >
             <div className=' flex justify-end '>
-                <div className=' flex items-center relative justify-evenly mr-[20px] mt-[20px]  h-[30px] w-[70px] rounded-2xl '>
+                <div className=' flex items-center relative justify-evenly mr-[20px] mt-[20px] mb-[10px]  h-[30px] w-[70px] rounded-2xl '>
                     <FontAwesomeIcon icon={faMoon} onClick={switchTheme} className={` text-[20px] p-[5px] hover:text-gray-600 transition cursor-pointer duration-450 ease-in-out ${ !dark ? " " : "bg-yellow-400" }   rounded-full  ` }/>
                     <FontAwesomeIcon icon={faSun} onClick={switchTheme} className={` text-[20px]  p-[5px] hover:text-gray-600 cursor-pointer transition duration-450 ease-in-out ${ dark ? " " : "bg-yellow-400" }  rounded-full  `}/>
                 </div>
@@ -80,7 +80,7 @@ function Card() {
                         transition={{ duration: 0.5}}
                         initial={{y:-10, opacity:0}}
                         animate={{y: 0, opacity:1}}
-                        className=' uppercase font-semibold text-[120px] leading-none '
+                        className=' uppercase font-semibold md:text-[120px] text-[100px]  leading-none '
                         >
                         Social
                         </motion.h1>
@@ -89,7 +89,7 @@ function Card() {
                         transition={{ duration: 0.5}}
                         initial={{y:10, opacity:0}}
                         animate={{y: 0, opacity:1}}
-                        className=' uppercase font-semibold text-[96px] leading-none '>Carding</motion.h1>
+                        className=' uppercase font-semibold md:text-[96px] text-[80px] leading-none '>Carding</motion.h1>
                     </div>
                     <motion.div 
                     transition={{ duration: 0.8}}
@@ -116,7 +116,7 @@ function Card() {
             {
               !loading && metaData && metaData.data &&  Object.keys(metaData.data.response).length != 0 && (
                   <div>
-                      <div className='  flex justify-center mt-[45px] ' >
+                      <div className='  flex justify-center mt-[45px] px-2 ' >
                         <div className=' flex flex-col  max-w-[550px] mb-8 drop-shadow-sm bg-gray-100 border-[1px] dark:bg-gray-700 border-green-200 p-[10px] rounded-md  '>
                             <div className=' flex justify-end mb-[15px] mt-[5px] '>
                                 { metaData.data.response.image ? (
@@ -135,14 +135,16 @@ function Card() {
                                         <img src={metaData.data.response.image.url} className=" w-full " alt="" />
                                     </div>
                                 ):
-                                    <img src="/missing-face.png" alt="" />
+                                    <img src="/missing-face.png" alt="Image missing" />
                                     
                                 }
                                 
                             </div>
                             <div className=' mt-[10px] '>
                                 <h1 className=' text-[20px] font-semibold text-gray-00 break-words dark:text-gray-400 mb-[10px] '>{metaData.data.response.title}</h1>
-                                <p className=' text-gray-500 text-[18px]  subpixel-antialiased mb-[5px] break-words '>{metaData.data.response.description && metaData.data.response.description }</p>
+                                
+                                <p className=' text-gray-500 text-[18px]   mb-[5px] break-words '>{metaData.data.response.description && metaData.data.response.description }</p>
+                                
                                 <div className=" flex items-center text-gray-600 dark:text-gray-400 ">
                                     <FontAwesomeIcon icon={faEarthEurope} onClick={switchTheme} className=" text-[18px] mr-[5px] "/>
                                     <h2 className='  text-[18px]  antialiased font-semibold ' >{metaData.data.response.site_name}</h2>
